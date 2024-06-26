@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Video Game Characters
+  body
+    h1 Video Game Characters
+    if characters.length > 0
+      table
+        thead
+          tr
+            th Name
+            th Bio
+            th Ability
+        tbody
+          each character in characters
+            tr
+              td= character.properties.name
+              td= character.properties.bio
+              td= character.properties.ability
+    else
+      p No video game characters found.
+    br
+    a(href='/update-characters') Add a Character
