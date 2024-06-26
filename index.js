@@ -9,7 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.set('views', path.join(__dirname, 'views'));
 
-const private_app_token = '';
+require('dotenv').config();
+
+const private_app_token = process.env.PRIVATE_APP_ACCESS;
 
 // Function to create custom object schema
 const createCustomObjectSchema = async () => {
