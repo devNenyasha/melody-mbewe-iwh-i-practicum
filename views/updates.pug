@@ -1,17 +1,27 @@
 doctype html
 html
   head
-    title Update Video Game Character
+    title= `${title}`
+    link(rel="stylesheet" href="/css/style.css")
   body
-    h1 Update Video Game Character
-    form(action='/update-characters' method='POST')
-      label(for='name') Name:
-      input(type='text' name='name' required)
-      br
-      label(for='bio') Bio:
-      textarea(name='bio' required)
-      br
-      label(for='ability') Ability:
-      input(type='text' name='ability' required)
-      br
-      button(type='submit') Save
+    .content
+      h1= `${title}`
+
+    .form-wrapper
+      form(action="/update-cobj", method="POST")
+        .form-field
+          label(for="name") Name:
+          input(type="text", name="name", placeholder="Enter Pet Name", id="name")
+
+        .form-field
+          label(for="breed") Breed:
+          input(type="text", name="breed", placeholder="Enter Breed Name", id="breed")
+
+        .form-field
+          label(for="age") Age:
+          input(type="number", name="age", placeholder="Enter Pet Age", id="age")
+
+        button(type="submit") Create Pet
+
+    a.update-link(href="/") Return to the homepage
+
